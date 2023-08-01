@@ -43,7 +43,7 @@ To run the development server, use the following command:
 python manage.py runserver
 
 
-The API will be available at http://127.0.0.1:8000/api/books/.
+The API will be available at http://127.0.0.1:8000/api/api/books/.
 
 ## API Endpoints
 
