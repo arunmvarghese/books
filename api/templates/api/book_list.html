@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Book List</h1>
+        
+        <!-- Book List -->
+        <table class="book-list">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Published Date</th>
+                <th>ISBN</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.published_date }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>${{ book.amount }}</td>
+                <td>
+                    <a href="{% url 'book-detail' book.pk %}" class="btn">View Details</a>
+                    <a href="{% url 'book-update' book.pk %}" class="btn">Update</a>
+                    <a href="{% url 'book-delete' book.pk %}" class="btn" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <!-- Create New Book -->
+        <div class="create-book">
+            <h2>Create New Book</h2>
+            <a href="{% url 'book-create' %}" class="btn">Add Book</a>
+        </div>
+    </div>
+</body>
+
+
+<style>
+    /* Style the table */
+    .book-list {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .book-list th,
+    .book-list td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .book-list th {
+        background-color: #f2f2f2;
+    }
+
+    /* Style the action buttons */
+    .action-buttons {
+        display: flex;
+    }
+
+    .action-buttons .btn {
+        margin-right: 5px;
+    }
+</style>
+</html>

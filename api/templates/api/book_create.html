@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Book</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Book</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" required>
+            </div>
+            <div class="form-group">
+                <label for="published_date">Published Date:</label>
+                <input type="date" name="published_date" id="published_date" required>
+            </div>
+            <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="text" name="isbn" id="isbn" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" step="0.01" name="amount" id="amount" required>
+            </div>
+            <button type="submit" class="btn">Create Book</button>
+            <a href="{% url 'book-list' %}" class="btn">Cancel</a>
+
+        </form>
+    </div>
+</body>
+</html>

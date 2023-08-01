@@ -1,0 +1,193 @@
+/* Basic CSS styles to improve the visual appearance */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table.book-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table.book-list th,
+table.book-list td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table.book-list th {
+    background-color: #f5f5f5;
+    text-align: left;
+}
+
+table.book-list td {
+    text-align: center;
+}
+
+table.book-list td.actions {
+    text-align: center;
+}
+
+.create-book {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-book h2 {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Add more styles as needed */
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+form, ul {
+    margin: 20px 0;
+    padding: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.edit-btn, .delete-btn {
+    margin-left: 10px;
+}
+/* CSS for the Book List page */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.book h2 {
+    margin-bottom: 5px;
+}
+
+.book p {
+    margin: 5px 0;
+}
+
+.book-list {
+    margin-bottom: 30px;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 5px;
+    width: 200px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.create-book {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-book .btn {
+    background-color: #007bff;
+}
