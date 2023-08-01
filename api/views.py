@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect,render
-from rest_framework import generics 
+from rest_framework import generics, status 
+from rest_framework.response import Response
 from .models import Book
 from .serializers import BookSerializer
 
@@ -31,8 +32,8 @@ class BookCreateView(generics.CreateAPIView):
         serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return redirect('book-detail', pk=serializer.data['id'])
-        return render(request, self.template_name, {'serializer': serializer})
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class BookRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
@@ -90,4 +91,4 @@ class BookRetrieveView(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         book = get_object_or_404(self.queryset, pk=kwargs['pk'])
         serializer = BookSerializer(instance=book)
-        return render(request, self.template_name, {'serializer': serializer, 'book': book})
+        return Response(serializer.data, status=status.HTTP_200_OK)
